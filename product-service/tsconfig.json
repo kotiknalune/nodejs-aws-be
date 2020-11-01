@@ -5,11 +5,12 @@
     "moduleResolution": "node",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "resolveJsonModule": true,
     "sourceMap": true,
     "target": "es2017",
     "outDir": "lib"
   },
-  "include": ["./**/*.ts"],
+  "include": ["./**/*.ts", "src/handlers/getProductsList.js", "src/handlers/getProductById.js"],
   "exclude": [
     "node_modules/**/*",
     ".serverless/**/*",
