@@ -5,7 +5,7 @@ const getAll = async (): Promise<Product[]> => {
   return products;
 };
  
-const getById = async (id: string) : Promise<Product> => {
+const getById = async (id: number) : Promise<Product> => {
   const product: Product = await productRepo.getById(id);
   return product;
 };

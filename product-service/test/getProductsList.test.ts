@@ -7,7 +7,7 @@ describe('getProductsList.handler', () => {
   test('should return all products', async () => {
     const mockProducts: Product[] = [
       {
-        id: '456',
+        id: 0,
         name: 'List test',
         description: 'List test',
         price: 40,

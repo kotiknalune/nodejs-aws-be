@@ -14,7 +14,7 @@ describe('getProductById.handler', () => {
       } as any);
 
       const mockProduct: Product = {
-        id: '123',
+        id: 20,
         name: 'test',
         description: 'test',
         price: 20,
