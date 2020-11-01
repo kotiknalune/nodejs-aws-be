@@ -21,27 +21,27 @@ const getCovidInfo = async () => {
 }
 
 export const getProductById = async (event, _context) => {
-  const { pathParameters:{productId}} = event;
+  const { pathParameters: { productId } } = event;
 
-  const  covidData = await getCovidInfo();
+  const covidData = await getCovidInfo();
 
   const filterProductsById = productList.filter((product) => product.id === productId);
 
   if (filterProductsById.length === 1) {
       return {
-          status: StatusCodes.OK,
+          statusCode: StatusCodes.OK,
           headers: headersGet,
           body: JSON.stringify(filterProductsById[0]),
       }
   } else if (filterProductsById.length > 1) {
     return {
-      status: StatusCodes.INTERNAL_SERVER_ERROR,
+      statusCode: StatusCodes.INTERNAL_SERVER_ERROR,
       body: ReasonPhrases.INTERNAL_SERVER_ERROR
     }
   }
 
   return {
-    status: StatusCodes.NOT_FOUND,
+    statusCode: StatusCodes.NOT_FOUND,
     body: 'Product not found!',
     covid: covidData.Global
   }
