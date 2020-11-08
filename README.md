@@ -1,27 +1,21 @@
-# Node.js AWS / BE
+# Task 4
+## EVALUATION CRITERIA:
 
-**Adds dynamic product representation on frontend side**
+Reviewers should verify the lambda functions by invoking them through provided URLs.
 
-ffaeTo execute tests run **npm test** while in product-service directory
+ 1 - Task 4.1 Use AWS Console to create a database instance in RDS with PostgreSQL and default configuration
 
-## Tasks
+ 3 - TASK 4.2 Integrate GET/products lambda to return a list of products from the database
 
-- [x] Create a lambda function called **getProductsList** triggered by GET. Requested URL: /products. Response: FULL array of products. Endpoint should be integrated with Frontend app for product list page representation.
+ 4 - TASK 4.3 Implement POST/products lambda and implement its logic so it will be creating a new item in a products table.
 
-- [x] Create a lambda function **getProductById** triggered by GET. Requested URL: /products/{productId}. Response should be 1 searched product from an array. Endpoint is not needed to be integrated with Frontend right now!
+ 5 - Your own Frontend application is integrated with product service (/products API) and products from product-service are represented on Frontend. Link to a working Front-End application is provided for cross-check reviewer.
+Additional (optional) tasks (but nice to have):
 
-- [x] Mock data is used and is stored in Product Service
+ +1 - POST/products lambda functions returns error 400 status code if product data is invalid
 
-- [x] Async/await is used in lambda functions
+ +1 - All lambdas return error 500 status code on any error (DB connection, any unhandled error in code)
 
-- [x]  ES6 modules are used for product-service implementation
+ +1 - All lambdas do console.log for each incoming requests and their arguments
 
-- [x]  Webpack is configured for product-service
-
-- [ ]  SWAGGER documentation is created for product-service
-
-- [x]  Lambda handlers are covered by basic UNIT tests (NO infrastructure logic is needed to be covered) (You may use JEST)
-
-- [x]  Lambda handlers (getProductsList, getProductById) code is written not in 1 single module (file) and separated in codebase
-
-- [x]  Main error scenario's are handled by API ("Product not found" error, try catch blocks are used in lambda handlers)
+ +1 - Transaction based creation of product
